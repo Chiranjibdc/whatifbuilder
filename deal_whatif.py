@@ -173,7 +173,8 @@ yearly_df = pd.DataFrame({
     "Hybrid": hybrid_yearly,
     "Outcome / Gain-share": outcome_yearly
 })
-st.dataframe(yearly_df.style.format("${:,.0f}"), use_container_width=True, hide_index=True)
+money_cols = ["Fixed Price", "T&M", "Hybrid", "Outcome / Gain-share"]
+st.dataframe(yearly_df.style.format("${:,.0f}", subset=money_cols), use_container_width=True, hide_index=True)
 
 # ====================== RECOMMENDATION ======================
 st.markdown("---")
